@@ -13,8 +13,8 @@
 ActiveRecord::Schema[7.0].define(version: 2022_09_18_130106) do
   create_table "issues", force: :cascade do |t|
     t.string "name"
-    t.integer "agree", default: 1
-    t.integer "disagree", default: 1
+    t.integer "agree", default: 0
+    t.integer "disagree", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
