@@ -3,7 +3,7 @@
 module Api
   class IssuesController < ApplicationController
     def index
-      issues = Issue.page(params[:page])
+      issues = Issue.page(params[:page]).per(params[:per_page] || 10)
 
       data = {
         issues: issues,
