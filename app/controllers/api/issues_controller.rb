@@ -3,7 +3,15 @@
 module Api
   class IssuesController < ApplicationController
     def index
-      render_success_response(data: 'listing issues')
+      issues = Issue.page(params[:page])
+
+      data = {
+        issues: issues,
+        current_page: issues.current_page,
+        total_pages: issues.total_pages
+      }
+
+      render_success_response(data: data)
     end
 
     def create
