@@ -15,12 +15,21 @@ module Api
     end
 
     def create
+      issue = Issue.find_or_create_by!(issue_params)
+
+      render_success_response(data: issue)
     end
 
     def agree
     end
 
     def disagree
+    end
+
+    private
+
+    def issue_params
+      params.permit(:name)
     end
   end
 end
