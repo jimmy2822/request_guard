@@ -6,5 +6,12 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     get 'hello'
+
+    resources :issues do
+      member do
+        post :agree
+        post :disagree
+      end
+    end
   end
 end
