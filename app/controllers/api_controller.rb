@@ -2,6 +2,6 @@
 
 class ApiController < ApplicationController
   def hello
-    render json: 'world'
+    render_success_response(data: 'world')
   end
 end
