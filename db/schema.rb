@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_18_123638) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_18_130106) do
   create_table "issues", force: :cascade do |t|
     t.string "name"
-    t.integer "agree"
-    t.integer "disagree"
+    t.integer "agree", default: 1
+    t.integer "disagree", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
